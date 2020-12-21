@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .g .header2 bg-success-gradiant{
+    flex-direction: row;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .g .header2 bg-success-gradiant{
+    float: none;
+    width: 100%;
+  }
+}
+        body {
+            background: #eee
+        }
+
+        .header2 {
+            font-family: "Montserrat", sans-serif;
+            color: #8d97ad;
+            font-weight: 300
+        }
+
+        .header2.bg-success-gradiant {
+            background: #2cdd9b;
+            background: -webkit-linear-gradient(legacy-direction(to right), #2cdd9b 0%, #1dc8cc 100%);
+            background: -webkit-gradient(linear, left top, right top, from(#2cdd9b), to(#1dc8cc));
+            background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+            background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+            background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%)
+        }
+
+        .header2 .font-12 {
+            font-size: 12px
+        }
+
+        .header2 .dropdown-item {
+            padding: 8px 1rem;
+            color: #8d97ad
+        }
+
+        .header2 .h2-nav .navbar-nav .nav-item .nav-link {
+            padding: 12px 0px;
+            color: #ffffff;
+            font-weight: 400
+        }
+
+        .header2 .h2-nav .navbar-nav .nav-item .nav-link:hover {
+            color: #263238
+        }
+
+        .header2 .h2-nav .navbar-nav .nav-item {
+            margin: 0 20px
+        }
+
+        @media (min-width: 1024px) {
+            .header2 .navbar-nav>.dropdown .dropdown-menu {
+                min-width: 210px;
+                margin-top: 0px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .header2 .dropdown-submenu:hover>.dropdown-menu {
+                display: block
+            }
+        }
+
+        .header2 .dropdown-toggle::after {
+            display: none
+        }
+
+        @media (min-width: 1024px) {
+            .header2 .hover-dropdown .navbar-nav>.dropdown:hover>.dropdown-menu {
+                display: block;
+                margin-top: 0px
+            }
+        }
+
+        .header2 .btn-dark {
+            color: #fff;
+            background-color: #343a40;
+            border-color: #343a40
+        }
+
+        .header2 .btn-dark:hover {
+            color: #fff;
+            background-color: #23272b;
+            border-color: #1d2124
+        }
+
+        .header2 .h2-nav .navbar-nav .nav-item .btn {
+            opacity: 0.5
+        }
+
+        .header2 .h2-nav .navbar-nav .nav-item .btn:hover {
+            opacity: 1
+        }
+
+        .header2 .dropdown-submenu>.dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-left: 0;
+            border-radius: 0.25rem;
+            display: none
+        }
+.container {
+    margin-top: 100px
+}
+
+.counter-box {
+    display: block;
+    background: #f6f6f6;
+    padding: 40px 20px 37px;
+    text-align: center
+}
+
+.counter-box p {
+    margin: 5px 0 0;
+    padding: 0;
+    color: #909090;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.counter-box i {
+    font-size: 60px;
+    margin: 0 0 15px;
+    color: #d2d2d2
+}
+
+.counter {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #666;
+    line-height: 28px
+}
+
+.counter-box.colored {
+    background: #3acf87
+}
+
+.counter-box.colored p,
+.counter-box.colored i,
+.counter-box.colored .counter {
+    color: #fff
+}
+body {
+    overflow-x: hidden;
+    background-color: #B2EBF2;
+    padding-bottom: 0 !important;
+    height: 100%;
+    position: absolute
+}
+
+.container-flui {
+    background-color: #F57C00;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 0px !important;
+    position: relative;
+    padding: 120px 80px 23.5px 80px;
+    bottom: 0 !important
+}
+
+@media screen and (max-width: 576px) {
+    .container-fluid {
+        padding-top: 350px;
+        padding-left: 20px;
+        padding-right: 20px
+    }
+}
+
+.form-card input {
+    padding: 5px 2px 3px 2px;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 0px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 20px;
+    letter-spacing: 1px
+}
+
+.form-card input:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: none;
+    border-bottom: 1px solid #F57C00;
+    outline-width: 0
+}
+
+.row-1 {
+    border: 1px solid #F57C00;
+    background-color: #fff;
+    position: absolute;
+    top: -100px;
+    margin-right: 65px
+}
+
+@media screen and (max-width: 576px) {
+    .row-1 {
+        margin-right: 5px;
+        padding-left: 10px
+    }
+
+    .form-card input {
+        margin-left: 10px
+    }
+}
+
+.heading {
+    color: #F57C00
+}
+
+.btn-orange {
+    background-color: #F57C00;
+    color: #fff !important;
+    height: 40px;
+    padding: 2px 10px 6px 10px !important
+}
+
+.img-1 {
+    width: 120px;
+    height: 120px;
+    margin-top: 16px;
+    margin-bottom: 5px
+}
+
+@media screen and (max-width: 576px) {
+    .img-1 {
+        visibility: hidden
+    }
+}
+
+.row-2 {
+    border: 1px solid #F57C00;
+    background-color: #FB8C00;
+    color: #fff;
+    padding-top: 10px;
+    position: relative;
+    margin-bottom: 20px
+}
+
+.block-item {
+    text-align: center;
+    width: 20%;
+    margin-top: 20px;
+    padding-left: 3px;
+    padding-right: 3px
+}
+
+@media screen and (max-width: 576px) {
+    .block-item {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto
+    }
+}
+
+.fa {
+    font-size: 30px
+}
+
+.desc {
+    font-size: 14px
+}
+
+.block-footer {
+    padding-bottom: 20px
+}
+
+.footer-headings {
+    color: #fff;
+    border-bottom: 1px #FFB74D solid;
+    padding-bottom: 10px
+}
+
+.list-items {
+    color: #fff;
+    margin-bottom: 0px;
+    font-size: 14px
+}
+
+@media screen and (max-width: 576px) {
+    .block-footer {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto
+    }
+}
+
+.img-g {
+    width: 120px;
+    height: 50px
+}
+
+.border-left {
+    border-left: #FFB74D 1px solid !important;
+    padding-left: 20px !important
+}
+
+@media screen and (max-width: 576px) {
+    .border-left {
+        border-left: none !important;
+        padding-left: 0 !important
+    }
+}
+
+.fa-sm {
+    font-size: 15px;
+    color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px
+}
+/*
+3333333#########################################################for blog content#####################
+*/
+.main{ -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-family: 'Overpass', sans-serif; letter-spacing: 0px; font-size: 17px; color: #8d8f90; font-weight: 400; line-height: 32px; background-color: #edefef; }
+h1, h2, h3, h4, h5, h6 { color: #25292a; margin: 0px 0px 10px 0px; font-family: 'Overpass', sans-serif; font-weight: 700; letter-spacing: -1px; line-height: 1; }
+h1 { font-size: 34px; }
+h2 { font-size: 28px; line-height: 38px; }
+h3 { font-size: 22px; line-height: 32px; }
+h4 { font-size: 20px; }
+h5 { font-size: 17px; }
+h6 { font-size: 12px; }
+p { margin: 0 0 20px; line-height: 1.7; }
+p:last-child { margin: 0px; }
+ul, ol { }
+a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+a:focus, a:hover { text-decoration: none; color: #f85759; }
+.page-caption { padding-top: 170px; padding-bottom: 174px; }
+.page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: center; }
+.card-section { position: relative; bottom: 60px; }
+.card-block { padding: 80px; }
+.section-title { margin-bottom: 60px; }
+@media screen and (max-width: 576px) {
+    .main {
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto
+    }
+}
+@media screen and (max-width: 500px) {
+    .fakeimg {
+        width: auto;
+        margin-right: auto;
+        margin-left: auto
+    }
+}
+@media screen and (max-width: 500px) {
+    .asif {
+        width: 60%;
+        margin-right: auto;
+        margin-left: auto
+    }
+}
+
+/*
+3333333#########################################################for comment#####################
+*/
+/*.widget-area.blank {
+background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+-ms-box-shadow: none;
+-o-box-shadow: none;
+box-shadow: none;
+}
+body .no-padding {
+padding: 0;
+}
+.widget-area {
+background-color: #fff;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+-ms-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+-o-box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+box-shadow: 0 0 16px rgba(0, 0, 0, 0.05);
+float: left;
+margin-top: 30px;
+padding: 25px 30px;
+position: relative;
+width: 100%;
+}
+.status-upload {
+background: none repeat scroll 0 0 #f5f5f5;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+float: left;
+width: 100%;
+}
+.status-upload form {
+float: left;
+width: 100%;
+}
+.status-upload form textarea {
+background: none repeat scroll 0 0 #fff;
+border: medium none;
+-webkit-border-radius: 4px 4px 0 0;
+-moz-border-radius: 4px 4px 0 0;
+-ms-border-radius: 4px 4px 0 0;
+-o-border-radius: 4px 4px 0 0;
+border-radius: 4px 4px 0 0;
+color: #777777;
+float: left;
+font-family: Lato;
+font-size: 14px;
+height: 142px;
+letter-spacing: 0.3px;
+padding: 20px;
+width: 100%;
+resize:vertical;
+outline:none;
+border: 1px solid #F2F2F2;
+}
+
+.status-upload ul {
+float: left;
+list-style: none outside none;
+margin: 0;
+padding: 0 0 0 15px;
+width: auto;
+}
+.status-upload ul > li {
+float: left;
+}
+.status-upload ul > li > a {
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+color: #777777;
+float: left;
+font-size: 14px;
+height: 30px;
+line-height: 30px;
+margin: 10px 0 10px 10px;
+text-align: center;
+-webkit-transition: all 0.4s ease 0s;
+-moz-transition: all 0.4s ease 0s;
+-ms-transition: all 0.4s ease 0s;
+-o-transition: all 0.4s ease 0s;
+transition: all 0.4s ease 0s;
+width: 30px;
+cursor: pointer;
+}
+.status-upload ul > li > a:hover {
+background: none repeat scroll 0 0 #606060;
+color: #fff;
+}
+.status-upload form button {
+border: medium none;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+-o-border-radius: 4px;
+border-radius: 4px;
+color: #fff;
+float: right;
+font-family: Lato;
+font-size: 14px;
+letter-spacing: 0.3px;
+margin-right: 9px;
+margin-top: 9px;
+padding: 6px 15px;
+}
+.dropdown > a > span.green:before {
+border-left-color: #2dcb73;
+}
+.status-upload form button > i {
+margin-right: 7px;
+}
+/*
+3333333#########################################################for comment#####################
+*/
+    </style>
+</head>
+
+<body class="g">
+    <div class="header2 bg-success-gradiant">
+        <div class="">
+            <!-- Header 1 code -->
+            <nav class=" navbar navbar-expand-lg py-0 h2-nav fixed-top"> <a class="navbar-brand" href="#">BBB</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header2" aria-controls="header2" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-menu"></span> </button>
+                <div class="collapse navbar-collapse hover-dropdown hover-dropdown" id="header2">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item dropdown position-relative"> <a class="nav-link dropdown-toggle" href="#" id="h2-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> News <i class="fa fa-angle-down ml-1 font-12"></i> </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="Login/News">Tech News</a></li>
+                                <li><a class="dropdown-item" href="Login/news-u">Everything</a></li>
+                                <li><a class="dropdown-item" href="#">Cricket News</a></li>
+                                <li class="divider" role="separator"></li>
+                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                <li class="divider" role="separator"></li>
+                                <li><a class="dropdown-item" href="#">Bitcoin</a></li>
+                                <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" data-toggle="dropdown" href="#">Sport News<i class="fa fa-long-arrow-right float-right mt-1"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Sport News</a></li>
+                                        <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" href="#" data-toggle="dropdown">cricket <i class="fa fa-long-arrow-right float-right mt-1"></i></a>
+                                            <ul class="nav navbar-nav dropdown-menu">
+                                                <li class="dropdown-submenu position-relative"> <a class="dropdown-toggle dropdown-item" href="#" data-toggle="dropdown">sport<i class="fa fa-long-arrow-right float-right mt-1"></i></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#">Cricket</a></li>
+                                                        <li><a class="dropdown-item" href="#"></a></li>
+                                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                        <li class="divider" role="separator"></li>
+                                                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                                        <li class="divider" role="separator"></li>
+                                                        <li><a class="dropdown-item" href="#">One more separated link</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="copy3.html">Blogs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Login/about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="E:\New folder (7)\project\copy3.html">Contact</a></li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="file:///E:/New%20folder%20(7)/project/copy2.html#"><i class="icon-bubble"></i> Need help?</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="Login/log-in">Login</a></li>
+                        <li class="nav-item"><a class="btn rounded-pill btn-dark py-2 px-4" href="Login/register-u">Sign up</a></li>
+                    </ul>
+                </div>
+            </nav> <!-- End Header 1 code -->
+        </div>
+    </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="carousel slide" id="carousel-554496">
+                <ol class="carousel-indicators">
+                    <li data-slide-to="0" data-target="#carousel-554496"> </li>
+                    <li data-slide-to="1" data-target="#carousel-554496"> </li>
+                    <li data-slide-to="2" data-target="#carousel-554496" class="active"> </li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item"> <img class="d-block w-100" alt="Carousel Bootstrap First" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1566561994/rest.png" />
+                        <div class="carousel-caption">
+                            <h4> Restaurant View </h4>
+                            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item"> <img class="d-block w-100" alt="Carousel Bootstrap Second" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1566562085/rest_1.png" />
+                        <div class="carousel-caption">
+                            <h4> printing and typesetting </h4>
+                            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item active"> <img class="d-block w-100" alt="Carousel Bootstrap Third" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1566562162/rest_2.png" />
+                        <div class="carousel-caption">
+                            <h4> printer took </h4>
+                            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                        </div>
+                    </div>
+                </div> <a class="carousel-control-prev" href="#carousel-554496" data-slide="prev"><span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" href="#carousel-554496" data-slide="next"><span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ###############################################################################################################-->
+
+<div class="container" >
+            <div class="row">
+                <div class="main" style="background-color:lightblue;">
+                    <h2>DIVERSITY IN INDIA</h2>
+                        <h5>Title description, Dec 7, 2020</h5>
+                            <div class="fakeimg" style="height:400px;"><img class="m" src="/static/images/India.jpg" style="height:400px";></div>
+                                  <p>Some text..</p>
+                                   <p>To begin with, India is the largest democracy in the world. With the second-largest population, our mainland is a vast extent. Stretching from Jammu and Kashmir in the north to Kanyakumari in the south and Gujarat in the west to Arunachal Pradesh in the east, there are 29 different states and 7 union territories including the islands of Andaman and Nicobar and Lakshadweep in the Indian Ocean.</p>
+                             <br>
+                             <h2>TITLE HEADING</h2>
+                             <h5>Title description, Sep 2, 2017</h5>
+                            <div class="fakeimg" style="height:400px;"><img class="m" src="/static/images/blog.jpg" style="height:400px weight:500px";></div>
+                          <p class="asif" >Some text..</p>
+                          <p>Even though there are many religions, the festival of each religion is celebrated and welcomed with open arms. If you are in India during Eid or Diwali or Christmas, you will see every tiny lane in every possible locality filled with people decorating, laughing, and wishing each other. There, you see there is unity in diversity.
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-header-->
+    <!-- news -->
+    <div class="card-section">
+        <div class="container">
+            <div class="card-block bg-white mb30">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <!-- section-title -->
+                        <div class="section-title mb-0">
+                            <h2>All about Hike. We share our knowledge on blog</h2>
+                            <p>Our approach is very simple: we define your problem and give the best solution. </p>
+                        </div>
+                        <!-- /.section-title -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+              Created for <a href="Login/home-U" target="_blank">absTech</a>
+              </div></div>
+            </div>
+            </div>
+          </div>
+<!-- ######################################################comment box#########################################################-->
+<!-- <div class="container">
+	<div class="row">
+		<h3>Status Upload Snipp</h3>
+	</div>
+
+    <div class="row">
+
+    <div class="col-md-6">
+    						<div class="widget-area no-padding blank">
+								<div class="status-upload">
+									<form>
+										<textarea placeholder="What are you doing right now?" ></textarea>
+										<ul>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
+											<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
+										</ul>
+										<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
+									</form>
+                  <script>
+                  $(document).ready(function(){
+
+
+    $("[data-toggle=tooltip]").tooltip();
+});
+                  </script>
+								</div><!- Status Upload  -->
+<!--							</div><!- Widget Area -->
+					<!--	</div>
+
+    </div>
+</div> -->
+<!-- ###############################################################################################################-->
+<div class="container">
+    <div class="row">
+        <div class="four col-md-3">
+            <div class="counter-box colored"> <i class="fa fa-thumbs-o-up"></i> <span class="counter">2147</span>
+                <p>Happy Customers</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box"> <i class="fa fa-group"></i> <span class="counter">3275</span>
+                <p>Registered Members</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box"> <i class="fa fa-shopping-cart"></i> <span class="counter">289</span>
+                <p>Available Products</p>
+            </div>
+        </div>
+        <div class="four col-md-3">
+            <div class="counter-box"> <i class="fa fa-user"></i> <span class="counter">1563</span>
+                <p>Saved Trees</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function() {
+
+$('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+Counter: $(this).text()
+}, {
+duration: 4000,
+easing: 'swing',
+step: function (now) {
+$(this).text(Math.ceil(now));
+}
+});
+});
+
+});
+</script>
+<div class="container-flui mx-auto">
+    <div class="row justify-content-center mt-4 row-1">
+        <div class="col-md-10">
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <h1 class="heading">Newsletter Signup</h1>
+                    <p>Get Best Deals On The Internet Delivered Right In Your Inbox</p>
+                </div>
+                <div class="col-md-6">
+                    <form class="form-card row mt-5">
+                        <div class="form-group"> <input type="email" name="email" placeholder="Enter Your Email ID"> </div>
+                        <div class="form-group"> <input class="btn btn-orange" type="submit" name="submit" value="Subscribe Now"> </div>
+                    </form>
+                </div>
+            </div>
+            <div class="terms d-flex pb-3"> <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</small> </div>
+        </div>
+        <div class="col-md-2"> <img class="img-1" src="https://i.imgur.com/jBlQcMI.png"> </div>
+    </div>
+    <div class="row d-flex justify-content-between row-2">
+        <div class="block-item">
+            <div class="fa fa-envelope"></div>
+            <div class="sub-head">Newsletter</div>
+            <p class="desc">5,00,000 People have already subscribed special newsletter</p>
+        </div>
+        <div class="block-item">
+            <div class="fa fa-eye"></div>
+            <div class="sub-head">Page Views</div>
+            <p class="desc">1 Billion Page views we receive every year</p>
+        </div>
+        <div class="block-item">
+            <div class="fa fa-fire"></div>
+            <div class="sub-head">Ranking</div>
+            <p class="desc">Top 200+ We are among top 200 sites in India</p>
+        </div>
+        <div class="block-item">
+            <div class="fa fa-home"></div>
+            <div class="sub-head">Merchants</div>
+            <p class="desc">Top 200 Merchants who are promoting their products</p>
+        </div>
+        <div class="block-item">
+            <div class="fa fa-facebook"></div>
+            <div class="sub-head">Fan's on Facebook</div>
+            <p class="desc">2,00,000+ fans on Facebook</p>
+        </div>
+    </div>
+    <div class="row d-flex pb-4 px-4">
+        <div class="col-md-8">
+            <div class="row d-flex justify-content-between">
+                <div class="d-flex flex-column block-footer">
+                    <h5 class="footer-headings">About</h5>
+                    <p class="list-items">About Us</p>
+                    <p class="list-items">Advertising Opportunities</p>
+                    <p class="list-items">Contact Us</p>
+                    <p class="list-items">Work With Us</p>
+                    <p class="list-items">Blog</p>
+                </div>
+                <div class="d-flex flex-column block-footer">
+                    <h5 class="footer-headings">Festival Deals</h5>
+                    <p class="list-items">Diwali Offers</p>
+                    <p class="list-items">New Year Offers</p>
+                    <p class="list-items">Holi Offers</p>
+                    <p class="list-items">Rakhi Offers</p>
+                    <p class="list-items">Valentine's Day Offers</p>
+                </div>
+                <div class="d-flex flex-column block-footer">
+                    <h5 class="footer-headings">Top Stories</h5>
+                    <p class="list-items">Jabong Coupons</p>
+                    <p class="list-items">TataCliq Coupons</p>
+                    <p class="list-items">Shopclues Coupons</p>
+                    <p class="list-items">Koovs Coupons</p>
+                    <p class="list-items">Paytm Coupons</p>
+                    <p class="list-items">Zomato Coupons</p>
+                    <p class="list-items">Goair Coupons</p>
+                    <p class="list-items">Justrelief Coupons</p>
+                </div>
+                <div class="d-flex flex-column block-footer">
+                    <h5 class="footer-headings">Need Help?</h5>
+                    <p class="list-items">Getting Started</p>
+                    <p class="list-items">Contact Us</p>
+                    <p class="list-items">FAQ's</p>
+                    <p class="list-items">Press</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="d-flex flex-column pl-md-5 px-4">
+                <h5 class="footer-headings pl-md-2">Download App</h5>
+                <div class="g-play pb-5 border-left"> <img class="img-g" src="https://i.imgur.com/9Txjm5w.png"> </div>
+                <div class="d-flex flex-column pl-md-2 border-left pb-3">
+                    <h5 class="footer-headings mb-3">Follow Us</h5>
+                    <div class="row d-flex pl-2">
+                        <div class="fa fa-sm fa-facebook"></div>
+                        <div class="fa fa-sm fa-twitter"></div>
+                        <div class="fa fa-sm fa-google-plus"></div>
+                        <div class="fa fa-sm fa-pinterest"></div>
+                        <div class="fa fa-sm fa-linkedin"></div>
+                        <div class="fa fa-sm fa-youtube-play"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+navbar navbar-expand-lg h2-nav
+ hover-dropdown
